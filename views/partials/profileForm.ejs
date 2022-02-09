@@ -1,0 +1,47 @@
+<div id="profile-form">
+    <div class="popup" style="padding: 20px 80px;">
+        <div class="close-btn" id="close-profile">&times</div>
+        <h1>Profile</h1>
+        <div class="profile-wrapper">
+            <div>
+                <label for="profile-email">Email</label>
+            <% if (typeof email != "undefined") {%>
+                <div id = 'profile-email'><%= email %></div>
+            <% }%>
+            </div>
+            <div>
+                <label for="profile FirstName">First Name</label>
+                <% if (typeof firstName != "undefined") {%>
+                    <div id = 'profile-firstName'><%= firstName %></div>
+                <% }%>
+            </div>
+            <div>
+                <label for="profile-lastName">Last Name</label>
+                <% if (typeof lastName != "undefined") {%>
+                    <div id = 'profile-lastName'><%= lastName %></div>
+                <% }%>
+            </div>
+            <div>
+                <label for="profile-address">Address</label>
+                <% if (typeof address != "undefined") {%>
+                    <div>
+                        <div id = 'profile-address'><%= address %></div>
+                        <i class="fas fa-edit edit" id = "edit-address"></i>
+                    </div>
+                <% }%>
+            </div>
+            <div>
+                <label for="profile-phoneNumber">Phone Number</label>
+                <% if (typeof phoneNumber != "undefined") {%>
+                    <div>
+                        <div id = 'profile-phoneNumber'><%= phoneNumber %></div>
+                        <i class="fas fa-edit edit" id = "edit-phoneNumber"></i>
+                    </div>
+                <% }%>
+            </div>
+            <form action="/logout?_method=DELETE" method="POST">
+                <button class = "logout-btn" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</div>

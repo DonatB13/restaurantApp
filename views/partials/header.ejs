@@ -1,0 +1,74 @@
+<header>
+    <a href="/" class="logo"><i class="fas fa-hamburger"></i>Burger</a>
+
+    <nav class="navbar">
+        <a class="active" href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <% if (typeof email != "undefined") {
+            if(admin) { %>
+            <i class="fas fa-user-shield" id="admin-icon" onClick = "toggleAdminPanel()"></i>
+            <% }%>
+            <i class="fas fa-user" id="user-icon"></i>
+        <% } else {%>
+            <i class="fas fa-sign-in-alt" id="login-icon"></i>
+        <% } %>
+        <div class="favorites-dropdown">
+            <a href="#!" class="fas fa-heart" id = "favorites-icon"></a>
+            <div class="favorites-wrapper">
+                <div class="favorites">
+                    <h1>Favorites</h1>
+                    <% if (typeof email != "undefined") {%>
+                        <% if (typeof favoriteItems != "undefined") { %>
+                            <script>
+                                var favoriteItems = []
+                            </script>
+                            <% if(favoriteItems.length == 0) 
+                            { %>
+                                <h3 id ="favorites-status">You don't have favorites yet.</h3>
+                            <% } %>
+                            <% for(let i=0; i < favoriteItems.length; i++) { %>
+                                <script>
+                                    favoriteItems.push("<%=favoriteItems[i] %>");
+                                </script>
+                                <div class="favorite-items">
+                                    <div>
+                                    <h3><%=favoriteItems[i] %></h3>
+                                    <button class="addCart-btn" onClick = "addCartFromFavorites(event, '<%= favoriteItems[i] %>')">Add Cart</button>
+                                    <button class="remove-btn" onClick = "removeFavorites(event.target.parentElement, '<%= favoriteItems[i] %>')">Remove</button>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% } else { %>
+                        <h3 id ="favorites-status">You don't have favorites yet.</h3>
+                        <% } %>
+                    <% } else {%>
+                        <h3>You need to be logged in.</h3>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="shopping-cart-dropdown">
+            <a href="#!" class="fas fa-shopping-cart" id="cart-icon"></a>
+            <div class="cart-wrapper">
+                <div class="cart">
+                    <div class="cart-content">
+                        <h1 style="margin-bottom: 10px;">Orders</h1>
+                        <h2 id ="cart-status">Your cart is empty.</h2>
+                        <div class="cart-items"></div>
+                    </div>
+                    <div class="sub-total">
+                        <h2>Subtotal</h2>
+                        <h2 id = "value">$0.00</h2>
+                    </div>
+                    <button class="checkout">CHECKOUT</button>
+                </div>
+            </div>
+            <div class="order-counter">0</div>
+        </div>
+    </div>
+</header>

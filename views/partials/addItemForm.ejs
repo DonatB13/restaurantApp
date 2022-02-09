@@ -1,0 +1,38 @@
+<div id="addItem-form">
+    <div class="popup">
+        <div class="close-btn" id="close-addItem" onClick = "toggleAddItem()">&times</div>
+        <form class="form" action="/api/item/addItem" enctype='multipart/form-data' method="POST">
+            <h2>Login</h2>
+            <div class="form-element">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id ="itemName" name = "itemName" placeholder = "Enter item name">
+            </div>
+            <div class="form-element">
+                <label for="description">Description</label>
+                <input type="text" id = "description" name = "description" placeholder = "Enter description">
+            </div>
+            <div class="form-element">
+                <label for="price">Price</label>
+                <input type="text" id = "price" name = "price" placeholder = "Enter price">
+            </div>
+            <div class="form-element">
+                <label for="price">Menu</label>
+                <input type="text" id = "menu" name = "menu" placeholder = "Enter menu">
+            </div>
+            <div class="image-form-element">
+                <label for="image">Image</label>
+                <input type="file" id = "image" name = "image">
+            </div>
+            <div class="form-element">
+                <button id = "addItemBtn" type="submit">Add item</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="login-error">
+    <div class="popup">
+        <div class="close-btn" id="close-error">&times</div>
+        <h2>Your email or password entered is incorrect. Please try again!</h2>
+    </div>
+</div>

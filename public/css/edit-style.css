@@ -1,0 +1,43 @@
+#address-form{
+    position: fixed;
+    top:-110%; left:0; 
+    height:100%; width:100%;
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:0 1rem;
+    text-transform: none;
+}
+
+#address-form.active{
+    top:0;
+}
+
+#phoneNumber-form .popup label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#phoneNumber-form {
+    position: fixed;
+    top:-110%; left:0; 
+    height:100%; width:100%;
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:0 1rem;
+    text-transform: none;
+}
+
+#phoneNumber-form.active{
+    top:0;
+}
+
+#phoneNumber-form .popup label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}

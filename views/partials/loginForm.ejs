@@ -1,0 +1,32 @@
+<div id="login-form">
+    <div class="popup">
+        <div class="close-btn" id="close-login">&times</div>
+        <form class="form" action="/login" method="POST">
+            <h2>Login</h2>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" id ="login-email" name = "login-email" placeholder = "Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" id = "login-password" name = "login-password" placeholder = "Enter password">
+            </div>
+            <div class="form-element">
+                <button id = "loginBtn" type="submit">Sign In</button>
+            </div>
+            <div class="form-element">
+                <a id = "forgotPassword" href="#">Forgot password?</a>
+            </div>
+            <div class="form-element">
+                <a id = "linkCreateAccount" href="#">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="login-error">
+    <div class="popup">
+        <div class="close-btn" id="close-error">&times</div>
+        <h2>Your email or password entered is incorrect. Please try again!</h2>
+    </div>
+</div>

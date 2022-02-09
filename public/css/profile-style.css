@@ -1,0 +1,50 @@
+#profile-form{
+    position: fixed;
+    top:-110%; left:0; 
+    height:100%; width:100%;
+    z-index: 1004;
+    background:rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:0 1rem;
+    text-transform: none;
+}
+
+#profile-form.active{
+    top:0;
+}
+
+#profile-form .profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+#profile-form .profile-wrapper > div {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    text-align: left;
+    padding-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+#profile-form .profile-wrapper > div > div {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#profile-form .profile-wrapper .edit {
+    cursor: pointer;
+}
+
+
+#profile-form .profile-wrapper > div label {
+    font-weight: bold;
+}
+
+#profile-email {
+    background: #fff;
+}

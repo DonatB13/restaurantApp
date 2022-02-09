@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login-style.css">
+    <link rel="stylesheet" href="../css/profile-style.css">
+    <% if(typeof admin != "undefined") { 
+        if(admin) {%>
+    
+    <link rel="stylesheet" href="../css/admin-style.css">
+    <%  }
+    } %>
+    <link rel="stylesheet" href="../css/edit-style.css">
+</head>
+<body>
+
+
+<!-- header section starts      -->
+<%- include("./partials/header.ejs") %>
+
+<!-- registerForm section starts      -->
+<%- include("./partials/registerForm.ejs") %>
+
+<!-- loginForm section starts      -->
+<%- include("./partials/loginForm.ejs") %>
+
+<!-- admin section starts      -->
+<%- include("./partials/adminPanel.ejs") %>
+
+<!-- add item section starts      -->
+<%- include("./partials/addItemForm.ejs") %>
+
+<!-- profileForm section starts      -->
+<%- include("./partials/profileForm.ejs") %>
+
+<!-- editForm section starts      -->
+<%- include("./partials/editForm.ejs") %>
+
+<!-- editForm section starts      -->
+<%- include("./partials/forgotPasswordForm.ejs") %>
+
+<!-- home section starts      -->
+<%- include("./partials/home.ejs") %>
+
+<!-- menu section starts      -->
+<%- include("./partials/menu.ejs") %>
+
+<!-- loader part  -->
+<div class="loader-container">
+    <img src="images/loader.gif" alt="">
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script src="js/sign-up.js"></script>
+<script src="/js/login.js"></script>
+
+</body>
+</html>

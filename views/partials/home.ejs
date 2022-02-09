@@ -1,0 +1,21 @@
+<section class="home" id="home">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <% for(let i = 0; i < items.length; i++) { 
+                if(items[i].menu == 'Slide') 
+                {%>
+                    <div class="swiper-slide" style="background-image: url(./<%=items[i].imagePath %>)">
+                        <div class="content">
+                            <h3><%=items[i].name %></h3>
+                            <a href="#" class="btn" onClick="addCart('<%=items[i].name %>',<%=items[i].price %>)">Order now</a>
+                        </div>
+                    </div>
+                <%}
+            }%>
+        <!-- <div class="swiper-pagination"></div> -->
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></di>v
+
+</section>

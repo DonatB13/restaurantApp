@@ -1,0 +1,39 @@
+<!-- edit address form -->
+<div id="address-form">
+    <div class="popup">
+        <div class="close-btn" id="close-address">&times</div>
+        <form class="form" action="/api/user/changeAddress" method="POST">
+            <h2>Change Address</h2>
+            <div class="form-element">
+                <label for="newAddress">New address</label>
+                <input type="text" id = "newAddress" name = "newAddress" placeholder = "Enter a new address">
+                <% if (typeof email != "undefined") {%>
+                <input type='hidden' name = 'email' value = "<%=email %>">
+                <% }%>
+            </div>
+            <div class="form-element">
+                <button type="submit">Change address</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- edit phoneNumber form -->
+<div id="phoneNumber-form">
+    <div class="popup">
+        <div class="close-btn" id="close-phoneNumber">&times</div>
+        <form class="form" action="/api/user/changePhoneNumber" method="POST">
+            <h2>Change Phone Number</h2>
+            <div class="form-element">
+                <label for="newPhoneNumber">New Phone Number</label>
+                <input type="text" id = "newPhoneNumber" name = "newPhoneNumber" placeholder = "Enter a new phone number">
+                <% if (typeof email != "undefined") {%>
+                <input type='hidden' name = 'email' value = "<%=email %>">
+                <% }%>
+            </div>
+            <div class="form-element">
+                <button type="submit">Change your number</button>
+            </div>
+        </form>
+    </div>
+</div>
