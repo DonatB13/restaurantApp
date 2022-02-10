@@ -13,7 +13,8 @@ const store = async (req, res, next) => {
         phoneNumber: req.body.phoneNumber,
         favoriteItems: [],
         cartItems: [],
-        admin: false
+        admin: false,
+        resetPasswordCode: ""
     })
     account.save()
     .then(response => {

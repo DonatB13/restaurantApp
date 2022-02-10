@@ -14,26 +14,33 @@ input, small {
     border-radius: 10px;
 }
 
-.popup .form .form-element #check-passed {
+.popup .form .form-element {
+    position: relative;
+}
+
+.popup .form .form-element > div #check-passed {
     position: absolute;
     font-size: 18px;
     color: lightgreen;
     right: 1rem;
-    bottom: 2.5rem;
-    visibility: hidden;
+    bottom: 1rem;
+    display: none;
 }
 
-.popup .form .form-element #check-passed.active {
-    visibility: visible;
+.popup .form .form-element > div #check-passed.active {
+    display: block;
 }
 
+.popup .form .form-element > div {
+    position: relative;
+}
 
-.popup .form .form-element #check-failed {
+.popup .form .form-element > div #check-failed {
     position: absolute;
     font-size: 18px;
     color: #e20000;
     right: 1rem;
-    bottom: 2.5rem;
+    bottom: 1rem;
     visibility: hidden;
 }
 

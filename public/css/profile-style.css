@@ -1,10 +1,10 @@
 #profile-form{
     position: fixed;
-    top:-110%; left:0; 
+    top:0; left:0; 
     height:100%; width:100%;
     z-index: 1004;
     background:rgba(0,0,0,.8);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -13,7 +13,7 @@
 }
 
 #profile-form.active{
-    top:0;
+    display: flex;
 }
 
 #profile-form .profile-wrapper {

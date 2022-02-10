@@ -38,12 +38,15 @@
 <!-- loginForm section starts      -->
 <%- include("./partials/loginForm.ejs") %>
 
-<!-- admin section starts      -->
-<%- include("./partials/adminPanel.ejs") %>
+<!-- admin section an add item form starts      -->
+<% if(typeof admin != "undefined") %>
+<%{ %>
+    <% if(admin) { %>
+    <%- include("./partials/adminPanel.ejs") %>
 
-<!-- add item section starts      -->
-<%- include("./partials/addItemForm.ejs") %>
-
+    <%- include("./partials/addItemForm.ejs") %>
+<% } 
+} %>
 <!-- profileForm section starts      -->
 <%- include("./partials/profileForm.ejs") %>
 

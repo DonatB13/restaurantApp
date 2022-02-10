@@ -67,9 +67,9 @@ app.get('/', (req, res) => {
                 console.log(req.user)
                 let query = {'email': req.user.email};
 
-                Account.find(query, 'favoriteItems -_id', function(err, data)
+                Account.find(query, 'admin favoriteItems -_id', function(err, data)
                 {
-                    res.render('index.ejs', {id: req.query.id, favoriteItems: data[0].favoriteItems, items, email: req.user.email, firstName: req.user.firstName, lastName: req.user.lastName, address: req.user.address, phoneNumber: req.user.phoneNumber, admin: req.user.admin})
+                    res.render('index.ejs', {id: req.query.id, favoriteItems: data[0].favoriteItems, items, email: req.user.email, firstName: req.user.firstName, lastName: req.user.lastName, address: req.user.address, phoneNumber: req.user.phoneNumber, admin: data[0].admin})
                     return;
                 });
             });
@@ -83,9 +83,9 @@ app.get('/', (req, res) => {
                     res.send("Error occured");
                     return;
                 }
-                Account.find(query, 'favoriteItems -_id', function(err, data)
+                Account.find(query, 'admin favoriteItems -_id', function(err, data)
                 {
-                    res.render('index.ejs', {favoriteItems: data[0].favoriteItems, items: items, email: req.user.email, firstName: req.user.firstName, lastName: req.user.lastName, address: req.user.address, phoneNumber: req.user.phoneNumber, admin: req.user.admin})
+                    res.render('index.ejs', {favoriteItems: data[0].favoriteItems, items: items, email: req.user.email, firstName: req.user.firstName, lastName: req.user.lastName, address: req.user.address, phoneNumber: req.user.phoneNumber, admin: data[0].admin})
                     return;
                 });
             });
@@ -98,14 +98,14 @@ app.get('/', (req, res) => {
             let id = req.query.id;
             Item.find({}, function(err, items)
             {
-                res.render('index.ejs', {items, id});
+                res.render('index.ejs', {items, id, admin: false});
                 return;
             });
         }
         else
         {
             Item.find({}, function(err, items) {
-                res.render('index.ejs', {items: items});
+                res.render('index.ejs', {items: items, admin: false});
                 return;
             });
         }
