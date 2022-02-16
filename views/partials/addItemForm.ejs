@@ -1,11 +1,11 @@
-<div id="addItem-form">
+<div id="add-item-form">
     <div class="popup">
-        <div class="close-btn" id="close-addItem" onClick = "toggleAddItem()">&times</div>
+        <div class="close-btn" id="close-add-item" onClick = "toggleAddItem()">&times</div>
         <form class="form" action="/api/item/addItem" enctype='multipart/form-data' method="POST">
             <h2>Login</h2>
             <div class="form-element">
-                <label for="itemName">Item Name:</label>
-                <input type="text" id ="itemName" name = "itemName" placeholder = "Enter item name">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id ="item-name" name = "item-name" placeholder = "Enter item name">
             </div>
             <div class="form-element">
                 <label for="description">Description</label>
@@ -24,7 +24,7 @@
                 <input type="file" id = "image" name = "image">
             </div>
             <div class="form-element">
-                <button id = "addItemBtn" type="submit">Add item</button>
+                <button id = "add-item-btn" type="submit">Add item</button>
             </div>
         </form>
     </div>

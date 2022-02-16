@@ -3,34 +3,49 @@ const bcrypt = require('bcrypt')
 const mail = require('../middleware/nodemailer')
 
 const store = async (req, res, next) => {
+    // confirm that email address has not been registered yet
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    let account = new Account({
-        email: req.body.signupEmail,
-        password: hashedPassword,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        address: req.body.address,
-        phoneNumber: req.body.phoneNumber,
-        favoriteItems: [],
-        cartItems: [],
-        admin: false,
-        resetPasswordCode: ""
-    })
-    account.save()
-    .then(response => {
-            res.redirect('/')
-    })
-    .catch(error => {
-        res.json({
-            message: 'An error occured!'
-        })
-    })
+    let query  = Account.where({ email: req.body.signUpEmail });
+    query.findOne(function (err, data) 
+    {
+        if (err) return handleError(err);
+        if (data && data != null) 
+        {
+            res.json({
+            message: 'There is an account with this email address already.'
+            })
+        }
+        else
+        {
+            let account = new Account({
+                email: req.body.signUpEmail,
+                password: hashedPassword,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                address: req.body.address,
+                phoneNumber: req.body.phoneNumber,
+                favoriteItems: [],
+                cartItems: [],
+                admin: false,
+                resetPasswordCode: ""
+            })
+            account.save()
+            .then(response => {
+                    res.redirect('/')
+            })
+            .catch(error => {
+                res.json({
+                    message: 'An error occured!'
+                })
+            })
+        }
+    });
 }
 
 const changePhoneNumber = (req, res) => {
     let query = {email: req.body.email};
 
-    Account.findOneAndUpdate(query, { phoneNumber: req.body.newPhoneNumber }, {upsert: true}, function(err, doc)
+    Account.findOneAndUpdate(query, { phoneNumber: req.body.new-phone-number }, {upsert: true}, function(err, doc)
     {
         if (err) return res.send(500, {error: err});
         else    res.redirect('/')
@@ -39,7 +54,7 @@ const changePhoneNumber = (req, res) => {
 
 const changeAddress = (req, res) => {
     let query = {email: req.user.email};
-    Account.findOneAndUpdate(query, { address: req.body.newAddress }, {upsert: true}, function(err, doc) 
+    Account.findOneAndUpdate(query, { address: req.body.new-address }, {upsert: true}, function(err, doc) 
     {
         if (err) return res.send(500, {error: err});
         else    res.redirect('/')
@@ -66,21 +81,29 @@ const removeFavorite = (req, res) => {
 }
 
 const forgotPassword = (req, res) => {
-    let query = {email: req.user.email};
+    let query = {"email": req.body.emailPassword};
     let resetPasswordCode = (Math.random() + 1).toString(36);
-    Account.updateOne(query, {$push: {resetPasswordCode}}, function(err, doc)
+    Account.findOneAndUpdate(query, {resetPasswordCode}, function(err, doc)
     {
         if (err)  return res.sendStatus(500, {error: err});
         else
         {
-        mail(req.user.firstName, req.user.email, resetPasswordCode);
-        res.sendStatus(200);
+            let query = {email: req.body.emailPassword};
+            Account.find(query, 'firstName -_id', function(err, data)
+            {
+                if (err) return res.send(500, {error: err});
+                else
+                {
+                    mail(data[0].firstName, req.body.emailPassword, resetPasswordCode);
+                    res.sendStatus(200);
+                }    
+            });
         }
     })
 }
 
 const resetPassword = async (req, res) => {
-    const hashedPassword = await bcrypt.hash(req.body.resetPassword, 10);
+    const hashedPassword = await bcrypt.hash(req.body.reset-password, 10);
     let query = {resetPasswordCode: req.body.id};
     Account.findOneAndUpdate(query, {password: hashedPassword, resetPasswordCode: ""}, function(err, doc)
     {

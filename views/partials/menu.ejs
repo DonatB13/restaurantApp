@@ -18,7 +18,7 @@
                 }
                 for(let i = 0; i < myMenu.length; i++)
                 {
-                    if (myMenu != 'Slide') { %>
+                    if (myMenu[i] != 'Slide') { %>
                     <li><button id = "<%=myMenu[i] %>"" onclick = loadCategory(this.id)><%=myMenu[i] %></button></li>
                 <% }
                 }%>
@@ -38,7 +38,7 @@
 
                     </div>
                     <div class="content">
-                        <h3 id = "itemName"><%= items[i].name %></h3>
+                        <h3 id = "item-name"><%= items[i].name %></h3>
                         <p><%=items[i].description %></p>
                         <button class="cart-btn" onClick = openCart() >Add to cart</button>
                         <span class="price">$<%=items[i].price %></span>

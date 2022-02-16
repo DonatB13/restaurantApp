@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var createAccountForm = document.querySelector("#register-form");
     var regPassword = document.querySelector("#password");
     //Input fields
-    var signUpEmail = document.querySelector("#signupEmail");
-    var firstName = document.querySelector("#firstName");
-    var lastName = document.querySelector("#lastName");
+    var signUpEmail = document.querySelector("#sign-up-email");
+    var firstName = document.querySelector("#first-name");
+    var lastName = document.querySelector("#last-name");
     var address = document.querySelector("#address");
-    var phoneNumber = document.querySelector("#phoneNumber");
+    var phoneNumber = document.querySelector("#phone-number");
     signUpEmail.addEventListener("blur", function (e) {
         if (!validateEmail(e)) {
             setInputError(signUpEmail, "Invalid email address.");
@@ -101,15 +101,15 @@ document.addEventListener("DOMContentLoaded", function () {
     phoneNumber.addEventListener("input", function (e) {
         clearInputError(phoneNumber);
     });
-    document.querySelector("#linkCreateAccount").addEventListener("click", function (e) {
+    document.querySelector("#link-create-account").addEventListener("click", function (e) {
         e.preventDefault();
         document.querySelector('#login-form').classList.remove('active');
         document.querySelector('#register-form').classList.toggle('active');
     });
-    document.querySelector("#forgotPassword").addEventListener("click", function (e) {
+    document.querySelector("#forgot-password").addEventListener("click", function (e) {
         e.preventDefault();
         document.querySelector('#login-form').classList.remove('active');
-        document.querySelector('#forgotPassword-form').classList.toggle('active');
+        document.querySelector('#forgot-password-form').classList.toggle('active');
     });
     document.querySelector("#close-register").addEventListener("click", function (e) {
         e.preventDefault();

@@ -1,17 +1,22 @@
 function handleLoginBtn(){
-    $("#loginBtn").on("click", function(event) {
+    $("#login-btn").on
+	("click", function(event) 
+	{
         event.preventDefault();
-        let email = $("#login-email").val();
-        let password = $("#login-password").val();
+        let email: string = $("#login-email").val() as string;
+        let password: string = $("#login-password").val() as string;
 
-        $.ajax({
+        $.ajax
+		({
             url: `${window.location.origin}/login`,
             method: "POST",
-            data: {email: email, password: password},
-            success: function(data) {
+            data: {email, password},
+            success: function(data) 
+			{
                 window.location.href = "/";
             },
-            error: function(err) {
+            error: function(err) 
+			{
                 console.log(err);
                 document.querySelector("#login-error").classList.add('active');
             }
@@ -19,7 +24,7 @@ function handleLoginBtn(){
     });
 }
 
-$(document).ready(function() {
+$(document).ready(function() 
+{
     handleLoginBtn();
 });
-

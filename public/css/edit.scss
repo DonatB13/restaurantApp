@@ -15,12 +15,12 @@
     top:0;
 }
 
-#phoneNumber-form .popup label {
+#phone-number-form .popup label {
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-#phoneNumber-form {
+#phone-number-form {
     position: fixed;
     top:-110%; left:0; 
     height:100%; width:100%;
@@ -33,11 +33,11 @@
     text-transform: none;
 }
 
-#phoneNumber-form.active{
+#phone-number-form.active{
     top:0;
 }
 
-#phoneNumber-form .popup label {
+#phone-number-form .popup label {
     font-weight: bold;
     font-size: 1.5rem;
 }

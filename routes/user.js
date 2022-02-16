@@ -8,7 +8,7 @@ router.post('/changePhoneNumber', checkAuthenticated, userController.changePhone
 router.post('/changeAddress', checkAuthenticated, userController.changeAddress)
 router.post('/addFavorite', checkAuthenticated, userController.addFavorite)
 router.post('/removeFavorite', checkAuthenticated, userController.removeFavorite)
-router.post('/forgotPassword', checkAuthenticated, userController.forgotPassword)
+router.post('/forgotPassword', userController.forgotPassword)
 router.post('/resetPassword', userController.resetPassword)
 
 

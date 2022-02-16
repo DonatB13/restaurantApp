@@ -9,7 +9,7 @@ var readHTMLFile = function(path, callback) {
            callback(err); 
            throw err;
             
-        }
+        }   
         else {
             callback(null, html);
         }

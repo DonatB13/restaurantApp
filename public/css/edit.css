@@ -1,0 +1,60 @@
+#address-form {
+  position: fixed;
+  top: -110%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1004;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  text-transform: none;
+}
+
+#address-form.active {
+  top: 0;
+}
+
+#phone-number-form .popup label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#phone-number-form {
+  position: fixed;
+  top: -110%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1004;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  text-transform: none;
+}
+
+#phone-number-form.active {
+  top: 0;
+}
+
+#phone-number-form .popup label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=edit.css.map */

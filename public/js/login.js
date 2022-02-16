@@ -1,5 +1,5 @@
 function handleLoginBtn() {
-    $("#loginBtn").on("click", function (event) {
+    $("#login-btn").on("click", function (event) {
         event.preventDefault();
         var email = $("#login-email").val();
         var password = $("#login-password").val();

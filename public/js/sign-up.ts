@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const createAccountForm: HTMLElement = document.querySelector("#register-form");
     const regPassword: HTMLInputElement = document.querySelector("#password");
     //Input fields
-    const signUpEmail: HTMLElement = document.querySelector("#signupEmail");
-    const firstName: HTMLElement = document.querySelector("#firstName");
-    const lastName: HTMLElement = document.querySelector("#lastName");
+    const signUpEmail: HTMLElement = document.querySelector("#sign-up-email");
+    const firstName: HTMLElement = document.querySelector("#first-name");
+    const lastName: HTMLElement = document.querySelector("#last-name");
     const address: HTMLElement = document.querySelector("#address");
-    const phoneNumber: HTMLElement = document.querySelector("#phoneNumber");
+    const phoneNumber: HTMLElement = document.querySelector("#phone-number");
 
     signUpEmail.addEventListener("blur", e => {
         if(!validateEmail(e))
@@ -120,16 +120,16 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInputError(phoneNumber);
     });
 
-    document.querySelector("#linkCreateAccount").addEventListener("click", e => {
+    document.querySelector("#link-create-account").addEventListener("click", e => {
         e.preventDefault();
         document.querySelector('#login-form').classList.remove('active');
         document.querySelector('#register-form').classList.toggle('active');
     });
 
-    document.querySelector("#forgotPassword").addEventListener("click", e => {
+    document.querySelector("#forgot-password").addEventListener("click", e => {
         e.preventDefault();
         document.querySelector('#login-form').classList.remove('active');
-        document.querySelector('#forgotPassword-form').classList.toggle('active');
+        document.querySelector('#forgot-password-form').classList.toggle('active');
     });
 
     document.querySelector("#close-register").addEventListener("click", e => {

@@ -38,8 +38,8 @@
                                 <div class="favorite-items">
                                     <div>
                                     <h3><%=favoriteItems[i] %></h3>
-                                    <button class="addCart-btn" onClick = "addCartFromFavorites(event, '<%= favoriteItems[i] %>')">Add Cart</button>
-                                    <button class="remove-btn" onClick = "removeFavorites(event.target.parentElement, '<%= favoriteItems[i] %>')">Remove</button>
+                                    <button class="add-cart-btn" onClick = "addCartFromFavorites(event, '<%= favoriteItems[i] %>')">Add Cart</button>
+                                    <button class="remove-favorite-btn" onClick = "removeFavorites(event.target.parentElement, '<%= favoriteItems[i] %>')">Remove</button>
                                     </div>
                                 </div>
                             <% } %>

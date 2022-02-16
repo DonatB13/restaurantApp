@@ -1,6 +1,6 @@
 var PORT = process.env.PORT || 5000;
 
-//requires
+//Requires
 const express           = require('express')
 const mongoose          = require('mongoose');
 const flash             = require('express-flash')
@@ -10,11 +10,11 @@ const methodOverride    = require('method-override')
 const passport            = require('passport')
 require('./config/passport')(passport);
 var dotenv = require('dotenv').config();
-//mongoose models
+//Mongoose models
 const Account           = require('./models/account')
 const Item              = require('./models/item')
 
-//routes
+//Routes
 const itemRoute         = require('./routes/item')
 const userRoute         = require('./routes/user')
 
@@ -47,7 +47,7 @@ const dbURL = process.env.MONGODB;
 
 mongoose.connect(dbURL)
 // only listen to requests from user when database connection has been established
-.then((result) =>   {app.listen(PORT);      console.log("connected to db")}
+.then((result) =>   {app.listen(PORT);      console.log("connected to database")}
 )
 .catch((err) => console.log(err));
 
@@ -112,6 +112,7 @@ app.get('/', (req, res) => {
     }
 })
 
+// Routes
 app.use('/api/item', itemRoute);
 app.use('/api/user', userRoute);
 
@@ -124,6 +125,7 @@ app.post('/login', (req, res, next) => {
     (req, res, next);
 });
 
+// Logout
 app.delete('/logout', (req, res) => {
     req.logOut()
     res.redirect('/')
